@@ -1,0 +1,97 @@
+{{!-- slider --}}
+<div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(/img/bg/4.jpg) no-repeat scroll center center / cover ;">
+    <div class="ht__bradcaump__wrap"></div>
+</div>
+{{!-- fin slider --}}
+
+<div class="container">
+    <div class="row">
+        <section class="htc__product__grid bg__white ptb--100">
+            <div class="container">
+                <div class="row">
+                    <div class="htc__product__rightidebar">
+                        <!-- tipos de vista -->
+                        {{!-- <div class="htc__grid__top">                            
+                            <ul class="view__mode" role="tablist">
+                                <li role="presentation" class="grid-view active">
+                                    <a href="#grid-view" role="tab" data-toggle="tab">
+                                        <i class="zmdi zmdi-grid"></i>
+                                    </a>
+                                </li>
+                                <li role="presentation" class="list-view">
+                                    <a href="#list-view" role="tab" data-toggle="tab">
+                                        <i class="zmdi zmdi-view-list"></i>
+                                    </a>
+                                </li>
+                            </ul>                            
+                        </div> --}}
+                        <!-- fin tipos de vista -->
+
+                        <!-- listado de productos -->
+                        <div class="row">
+                            <div class="shop__grid__view__wrap">
+                                <!-- vista producto simple -->
+                                <div role="tabpanel" id="grid-view" class="single-grid-view tab-pane fade in active clearfix">
+                                    {{#each list_Out.recordset}}                                    
+                                    <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                                        <div class="category">
+                                            <div class="ht__cat__thumb">
+                                                <a href="/outdoor/detalle_outdoor/{{id}}">
+                                                    <img src="img/product/1.jpg" alt="product images">
+                                                </a>
+                                            </div>
+                                            <div class="fr__hover__info">
+                                                <ul class="product__action">
+                                                    <li><a href="cart.html"><i class="icon-handbag icons"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="fr__product__inner">
+                                                <h4><a href="product-details.html">{{nombre}}</a></h4>
+                                                <ul class="fr__pro__prize">
+                                                    {{!-- <li class="old__prize">$30.3</li> --}}
+                                                    <li>${{precio}}</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                    {{/each}}
+                                </div>
+                                <!-- fin vista producto simple -->
+
+                                <!-- vista producto detallado -->
+                                <div role="tabpanel" id="list-view" class="single-grid-view tab-pane fade clearfix">
+                                    <div class="col-xs-12">
+                                        <div class="ht__list__wrap">
+                                        {{#each list_Out.recordset}}
+                                            <div class="ht__list__product">
+                                                <div class="ht__list__thumb">
+                                                    <a href="/outdoor/detalle_outdoor/{{id}}">
+                                                        <img src="img/product-2/pro-1/1.jpg" alt="product images">
+                                                    </a>
+                                                </div>
+                                                <div class="htc__list__details">
+                                                    <h2><a href="product-details.html">{{nombre}}</a></h2>
+                                                    <ul class="pro__prize">
+                                                        {{!-- <li class="old__prize">$8250</li> --}}
+                                                        <li>${{precio}}</li>
+                                                    </ul>
+                                                    <p>{{descripcion}}.</p>
+                                                    <div class="fr__list__btn">
+                                                        <a class="fr__btn" href="cart.html">Agregar al carro</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {{/each}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- fin vista producto detallado -->
+                            </div>
+                        </div>
+                        <!-- fin listado de productos -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
